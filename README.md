@@ -147,11 +147,13 @@ See `pnpm hardhat metadata:collection --help` for a detailed description of each
 You can also create the metadata for multiple collections using a csv file. See 'metadata/collections.csv' for an example. This file is used by default but you can also pass a different path as an argument.
 
 Basic usage:
+
 ```bash copy
 pnpm hardhat metadata:collections-csv [CSV_FILE_PATH] [--base-uri <STRING>] [--external-uri <STRING>] [--license <STRING>] [--license-uri <STRING>]
 ```
 
 Example:
+
 ```bash copy
 pnpm hardhat metadata:collections-csv metadata/collections.csv
 ```
@@ -181,11 +183,13 @@ See `pnpm hardhat metadata:token --help` for a detailed list of arguments.
 You can also create the metadata for multiple tokens using a csv file. See 'metadata/tokens.csv' for an example. This file is used by default but you can also pass a different path as an argument.
 
 Basic usage:
+
 ```bash copy
 pnpm hardhat metadata:tokens-csv COLLECTION_SLUG [CSV_FILE_PATH] [--base-uri <STRING>] [--external-uri <STRING>] [--license <STRING>] [--license-uri <STRING>]
 ```
 
 Example:
+
 ```bash copy
 pnpm hardhat metadata:tokens-csv backgrounds metadata/tokens.csv
 ```
@@ -215,11 +219,13 @@ See `pnpm hardhat metadata:asset --help` for a detailed list of arguments.
 You can also create the metadata for multiple assets using a csv file. See 'metadata/assets.csv' for an example. This file is used by default but you can also pass a different path as an argument.
 
 Basic usage:
+
 ```bash copy
 pnpm hardhat metadata:assets-csv COLLECTION_SLUG [CSV_FILE_PATH] [--base-uri <STRING>] [--external-uri <STRING>] [--license <STRING>] [--license-uri <STRING>]
 ```
 
 Example:
+
 ```bash copy
 pnpm hardhat metadata:assets-csv backgrounds metadata/assets.csv
 ```
@@ -265,11 +271,13 @@ See `pnpm hardhat metadata:fixed-part --help` for a detailed list of arguments.
 You can also create the metadata for multiple fixed parts using a csv file. See 'metadata/fixed-parts.csv' for an example. This file is used by default but you can also pass a different path as an argument.
 
 Basic usage:
+
 ```bash copy
 pnpm hardhat metadata:fixed-parts-csv [CSV_FILE_PATH] [--base-uri <STRING>]
 ```
 
 Example:
+
 ```bash copy
 pnpm hardhat metadata:fixed-parts-csv metadata/fixed-parts.csv
 ```
@@ -305,11 +313,13 @@ See `pnpm hardhat metadata:slot-part --help` for a detailed list of arguments.
 You can also create the metadata for multiple slot parts using a csv file. See 'metadata/slot-parts.csv' for an example. This file is used by default but you can also pass a different path as an argument.
 
 Basic usage:
+
 ```bash copy
 pnpm hardhat metadata:slot-parts-csv [CSV_FILE_PATH] [--base-uri <STRING>]
 ```
 
 Example:
+
 ```bash copy
 pnpm hardhat metadata:slot-parts-csv metadata/slot-parts.csv
 ```
