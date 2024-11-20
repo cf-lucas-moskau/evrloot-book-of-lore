@@ -1,4 +1,4 @@
-import { ethers, run } from 'hardhat';
+import { ethers, network, run } from 'hardhat';
 import { delay, isHardhatNetwork } from './utils';
 import {
   RMRKBulkWriter,
@@ -7,7 +7,71 @@ import {
   RMRKCollectionUtils,
   RMRKEquipRenderUtils,
   RMRKRoyaltiesSplitter,
+  BookOfLore,
+  StrangePage,
 } from '../typechain-types';
+import { getRegistry } from './get-registry';
+import * as C from './constants';
+
+export async function deployBookOfLore(): Promise<BookOfLore> {
+  console.log(`Deploying BookOfLore to ${network.name} blockchain...`);
+
+  const contractFactory = await ethers.getContractFactory('BookOfLore');
+  const args = [C.BOOK_METADATA_URL, 66n, C.BENEFICIARY_ADDRESS, 1500] as const;
+  const contract: BookOfLore = await contractFactory.deploy(...args);
+  await contract.waitForDeployment();
+  const contractAddress = await contract.getAddress();
+  console.log(`BookOfLore deployed to ${contractAddress}`);
+
+  if (!isHardhatNetwork()) {
+    console.log('Waiting 10 seconds before verifying contract...');
+    await delay(10000);
+    await run('verify:verify', {
+      address: contractAddress,
+      constructorArguments: args,
+      contract: 'contracts/BookOfLore.sol:BookOfLore',
+    });
+
+    // Only do on testing, or if whitelisted for production
+    const registry = await getRegistry();
+    await registry.addExternalCollection(contractAddress, args[0]);
+    console.log('Collection added to Singular Registry');
+  }
+  return contract;
+}
+
+export async function deployStrangePage(): Promise<StrangePage> {
+  console.log(`Deploying StrangePage to ${network.name} blockchain...`);
+
+  const contractFactory = await ethers.getContractFactory('StrangePage');
+  const args = [C.PAGE_METADATA_URL, 850n, C.BENEFICIARY_ADDRESS, 1500] as const;
+  const contract: StrangePage = await contractFactory.deploy(...args);
+  await contract.waitForDeployment();
+  const contractAddress = await contract.getAddress();
+  console.log(`StrangePage deployed to ${contractAddress}`);
+
+  if (!isHardhatNetwork()) {
+    console.log('Waiting 10 seconds before verifying contract...');
+    await delay(10000);
+    await run('verify:verify', {
+      address: contractAddress,
+      constructorArguments: args,
+      contract: 'contracts/StrangePage.sol:StrangePage',
+    });
+
+    // Only do on testing, or if whitelisted for production
+    const registry = await getRegistry();
+    await registry.addExternalCollection(contractAddress, args[0]);
+    console.log('Collection added to Singular Registry');
+  }
+  return contract;
+}
+
+export async function addBookAssets(book: BookOfLore) {}
+
+export async function addPageAssets(page: StrangePage) {}
+
+export async function configureCatalog(catalog: RMRKCatalogImpl, pageAddress: string) {}
 
 export async function deployBulkWriter(): Promise<RMRKBulkWriter> {
   const bulkWriterFactory = await ethers.getContractFactory('RMRKBulkWriter');
