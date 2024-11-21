@@ -17,9 +17,9 @@ import {
 import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 import {IStrangePage} from "./IStrangePage.sol";
 
-error OnlyNFTOwnerCanTransferTokensFromIt();
-error ContractURIFrozen();
 error ArraysLengthMismatch();
+error ContractURIFrozen();
+error OnlyNFTOwnerCanTransferTokensFromIt();
 
 contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
     // Events
@@ -85,6 +85,9 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
             _safeMint(tos[i], tokenId, "");
             _addAssetToToken(tokenId, bookAssetId, 0);
             _nestMintPagesAndEquip(tokenId, bookAssetId, pages[i]);
+            unchecked {
+                ++i;
+            }
         }
     }
 
@@ -99,10 +102,13 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
                 tokenId: bookId,
                 childIndex: i,
                 assetId: bookAssetId,
-                slotPartId: pages[i].pageNumber,
-                childAssetId: pages[i].pageNumber
+                slotPartId: pages[i].number,
+                childAssetId: pages[i].number
             });
             _equip(equipInfo);
+            unchecked {
+                ++i;
+            }
         }
     }
 

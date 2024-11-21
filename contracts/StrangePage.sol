@@ -8,10 +8,13 @@ import {
 import {
     RMRKImplementationBase
 } from "@rmrk-team/evm-contracts/contracts/implementations/utils/RMRKImplementationBase.sol";
+import {IStrangePage} from "./IStrangePage.sol";
 
+error ArraysLengthMismatch();
 error ContractURIFrozen();
+error PageAlreadyMinted(uint8 pageNumber, uint8 pageId, uint256 pageTokenId);
 
-contract StrangePage is RMRKAbstractEquippable {
+contract StrangePage is RMRKAbstractEquippable, IStrangePage {
     // Events
     /**
      * @notice From ERC4906 This event emits when the metadata of a token is changed.
@@ -27,6 +30,9 @@ contract StrangePage is RMRKAbstractEquippable {
 
     // Variables
     uint256 private _contractURIFrozen; // Cheaper than a bool
+    address private _bookOfLore;
+    mapping(uint256 tokenId => Page page) private _tokenIdToPage;
+    mapping(uint16 pageNumberAndId => uint256 tokenId) private _pageToTokenId;
 
     // Constructor
     constructor(
@@ -52,14 +58,81 @@ contract StrangePage is RMRKAbstractEquippable {
         return getAssetMetadata(tokenId, _activeAssets[tokenId][0]);
     }
 
-    function nestMintWithAssets(
-        address parentContract,
-        uint256 destinationId,
-        uint64 assetId
-    ) public virtual onlyOwnerOrContributor {
-        (uint256 tokenId, ) = _prepareMint(1);
-        _nestMint(parentContract, tokenId, destinationId, "");
-        _addAssetToToken(tokenId, assetId, 0);
+    function setBookOfLore(address bookOfLore_) external onlyOwner {
+        _bookOfLore = bookOfLore_;
+    }
+
+    function getBookOfLore() external view returns (address) {
+        return _bookOfLore;
+    }
+
+    function getTokenIdFromPage(
+        uint8 pageNumber,
+        uint8 pageId
+    ) external view returns (uint256) {
+        return _pageToTokenId[(uint16(pageNumber) << 8) | pageId];
+    }
+
+    function getPageFromTokenId(
+        uint256 tokenId
+    ) external view returns (Page memory) {
+        return _tokenIdToPage[tokenId];
+    }
+
+    function nestMintPages(
+        uint256 bookId,
+        Page[] memory pages
+    ) external onlyOwnerOrContributor returns (uint256 firstId) {
+        uint256 offset;
+        (firstId, offset) = _prepareMint(pages.length);
+
+        for (uint256 tokenId = firstId; tokenId < offset; ) {
+            Page memory page = pages[tokenId - firstId];
+            _nestMint(_bookOfLore, tokenId, bookId, "");
+            _checkPageNotMintedAndStore(tokenId, page);
+            _addAssetToToken(tokenId, page.number, 0);
+
+            unchecked {
+                ++tokenId;
+            }
+        }
+    }
+
+    function mintPages(
+        address[] memory tos,
+        Page[] memory pages
+    ) external onlyOwnerOrContributor returns (uint256 firstId) {
+        uint256 length = tos.length;
+        if (length != pages.length) {
+            revert ArraysLengthMismatch();
+        }
+        uint256 offset;
+        (firstId, offset) = _prepareMint(pages.length);
+
+        for (uint256 tokenId = firstId; tokenId < offset; ) {
+            Page memory page = pages[tokenId - firstId];
+            _safeMint(_bookOfLore, tokenId, "");
+            _checkPageNotMintedAndStore(tokenId, page);
+            _addAssetToToken(tokenId, page.number, 0);
+
+            unchecked {
+                ++tokenId;
+            }
+        }
+    }
+
+    /* This is to prevent erreoneous minting of the same page when migrating */
+    function _checkPageNotMintedAndStore(
+        uint256 tokenId,
+        Page memory page
+    ) internal {
+        uint16 pageNumberAndId = (uint16(page.number) << 8) | page.id;
+        uint256 pageTokenId = _pageToTokenId[pageNumberAndId];
+        if (pageTokenId != 0) {
+            revert PageAlreadyMinted(page.number, page.id, pageTokenId);
+        }
+        _pageToTokenId[pageNumberAndId] = tokenId;
+        _tokenIdToPage[tokenId] = page;
     }
 
     /**
