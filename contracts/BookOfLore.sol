@@ -11,10 +11,15 @@ import {
 import {
     RMRKTokenHolder
 } from "@rmrk-team/evm-contracts/contracts/RMRK/extension/tokenHolder/RMRKTokenHolder.sol";
+import {
+    IERC6220
+} from "@rmrk-team/evm-contracts/contracts/RMRK/equippable/IERC6220.sol";
 import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import {IStrangePage} from "./IStrangePage.sol";
 
 error OnlyNFTOwnerCanTransferTokensFromIt();
 error ContractURIFrozen();
+error ArraysLengthMismatch();
 
 contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
     // Events
@@ -32,6 +37,7 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
 
     // Variables
     mapping(address => bool) private _autoAcceptCollection;
+    IStrangePage private _pagesCollection;
     uint256 private _contractURIFrozen; // Cheaper than a bool
 
     // Constructor
@@ -58,13 +64,46 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
         return getAssetMetadata(tokenId, _activeAssets[tokenId][0]);
     }
 
-    function mintWithAsset(
-        address to,
-        uint64 assetId
+    function batchMintWithAsset(
+        uint256[] memory tokenIds,
+        address[] memory tos,
+        uint64[] memory assetIds,
+        IStrangePage.Page[][] memory pages
     ) public virtual onlyOwnerOrContributor {
-        (uint256 tokenId, ) = _prepareMint(1);
-        _safeMint(to, tokenId, "");
-        _addAssetToToken(tokenId, assetId, 0);
+        uint256 length = tokenIds.length;
+        if (
+            length != tos.length ||
+            length != assetIds.length ||
+            length != pages.length
+        ) {
+            revert ArraysLengthMismatch();
+        }
+        _prepareMint(length);
+        for (uint256 i = 0; i < length; ) {
+            uint256 tokenId = tokenIds[i];
+            uint64 bookAssetId = assetIds[i];
+            _safeMint(tos[i], tokenId, "");
+            _addAssetToToken(tokenId, bookAssetId, 0);
+            _nestMintPagesAndEquip(tokenId, bookAssetId, pages[i]);
+        }
+    }
+
+    function _nestMintPagesAndEquip(
+        uint256 bookId,
+        uint64 bookAssetId,
+        IStrangePage.Page[] memory pages
+    ) internal {
+        uint256 length = pages.length;
+        for (uint256 i; i < length; ) {
+            IERC6220.IntakeEquip memory equipInfo = IERC6220.IntakeEquip({
+                tokenId: bookId,
+                childIndex: i,
+                assetId: bookAssetId,
+                slotPartId: pages[i].pageNumber,
+                childAssetId: pages[i].pageNumber
+            });
+            _equip(equipInfo);
+        }
     }
 
     /**
