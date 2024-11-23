@@ -1,0 +1,16 @@
+{
+  "name": "Strange Page #3",
+  "description": "A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ",
+  "mediaUri": "ipfs://QmNTMGiT1v5QmvKwf5HZKyZjAumnUbVQYysevrq6LHmQzq/pages/equipped/3.png",
+  "image": "ipfs://QmNTMGiT1v5QmvKwf5HZKyZjAumnUbVQYysevrq6LHmQzq/pages/equipped/3.png",
+  "thumbnailUri": "ipfs://QmNTMGiT1v5QmvKwf5HZKyZjAumnUbVQYysevrq6LHmQzq/pages/full/3.png",
+  "preferThumb": true,
+  "attributes": [
+    {
+      "label": "Page",
+      "trait_type": "Page",
+      "type": "integer",
+      "value": "3"
+    }
+  ]
+}

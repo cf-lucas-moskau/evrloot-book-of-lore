@@ -1,4 +1,11 @@
 name,description,fallbackMediaUri
-Head,,
-Background,,ipfs://defaultIfNothingEquipped
-Body,Description and fallback are optional,
+Page 1,,book/fallback_rune_1.png
+Page 2,,book/fallback_rune_1.png
+Page 3,,book/fallback_rune_1.png
+Page 4,,book/fallback_rune_2.png
+Page 5,,book/fallback_rune_2.png
+Page 6,,book/fallback_rune_2.png
+Page 7,,book/fallback_rune_3.png
+Page 8,,book/fallback_rune_3.png
+Page 9,,book/fallback_rune_3.png
+Page 10,,book/fallback_tree.png

@@ -1,4 +1,11 @@
 filename,name,description,mediaUri,thumbnailUri,animationUri,attributes
-01,Test Asset 1,This is a test,ipfs://mediaUri,,,"color:string:green,rank:integer:1"
-01,Test Asset 2,This is a test,ipfs://mediaUri,ipfs://thumbUri,ipfs://animationUri,"color:string:red,rank:integer:2"
-01,Test Asset 3,This is a test,ipfs://mediaUri,,,"color:string:red"
+1,Strange Page #1,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/1.png,pages/full/1.png,,Page:integer:1
+2,Strange Page #2,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/2.png,pages/full/2.png, ,Page:integer:2
+3,Strange Page #3,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/3.png,pages/full/3.png,,Page:integer:3
+4,Strange Page #4,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/4.png,pages/full/4.png,,Page:integer:4
+5,Strange Page #5,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/5.png,pages/full/5.png,,Page:integer:5
+6,Strange Page #6,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/6.png,pages/full/6.png,,Page:integer:6
+7,Strange Page #7,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/7.png,pages/full/7.png,,Page:integer:7
+8,Strange Page #8,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/8.png,pages/full/8.png,,Page:integer:8
+9,Strange Page #9,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/9.png,pages/full/9.png,,Page:integer:9
+10,Strange Page #10,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/10.png,pages/full/10.png,,Page:integer:10

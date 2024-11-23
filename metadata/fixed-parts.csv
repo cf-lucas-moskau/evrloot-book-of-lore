@@ -1,3 +1,19 @@
 name,description,mediaUri
-blue_body,Description is optional but mediaUri is mandatory,ipfs://QmZ4t
-red_body,,ipfs://QmZ4t
+Book Base,,book/book_base.png
+Ribbon Blue,,book/ribbon_blue.png
+Ribbon Green,,book/ribbon_green.png
+Ribbon Red,,book/ribbon_red.png
+Ribbon Purple,,book/ribbon_purple.png
+Ribbon Shadow,,book/ribbon_shadow.png
+Rune 1a,,book/rune_1a.png
+Rune 1b,,book/rune_1b.png
+Rune 1c,,book/rune_1c.png
+Rune 2a,,book/rune_2a.png
+Rune 2b,,book/rune_2b.png
+Rune 2c,,book/rune_2c.png
+Rune 3a,,book/rune_3a.png
+Rune 3b,,book/rune_3b.png
+Rune 3c,,book/rune_3c.png
+Tree Blue,,book/tree_blue.png
+Tree Bright,,book/tree_bright.png
+Tree Dark,,book/tree_dark.png
