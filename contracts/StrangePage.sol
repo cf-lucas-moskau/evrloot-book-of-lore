@@ -42,7 +42,7 @@ contract StrangePage is RMRKAbstractEquippable, IStrangePage {
         uint16 royaltyPercentageBps
     )
         RMRKImplementationBase(
-            "StrangePage",
+            "Strange Pages",
             "EVRSP",
             collectionMetadata,
             maxSupply,

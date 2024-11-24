@@ -38,6 +38,8 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
     // Variables
     mapping(address => bool) private _autoAcceptCollection;
     IStrangePage private _pagesCollection;
+    address private _catalog;
+    string private _bookMetadataURI;
     uint256 private _contractURIFrozen; // Cheaper than a bool
 
     // Constructor
@@ -48,7 +50,7 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
         uint16 royaltyPercentageBps
     )
         RMRKImplementationBase(
-            "BookOfLore",
+            "Book of Lore",
             "EVRBOL",
             collectionMetadata,
             maxSupply,
@@ -60,35 +62,101 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
     // Methods
     function tokenURI(uint256 tokenId) public view returns (string memory) {
         _requireMinted(tokenId);
-        // This will revert if the token has not assets, only use if at least an asset is assigned on mint to every token
-        return getAssetMetadata(tokenId, _activeAssets[tokenId][0]);
+        return _bookMetadataURI;
     }
 
-    function batchMintWithAsset(
-        uint256[] memory tokenIds,
+    function setConfig(
+        address pagesCollection,
+        address catalog,
+        string memory bookMetadataURI
+    ) external onlyOwner {
+        _pagesCollection = IStrangePage(pagesCollection);
+        _catalog = catalog;
+        _bookMetadataURI = bookMetadataURI;
+    }
+
+    function getConfig()
+        external
+        view
+        returns (
+            address pagesCollection,
+            address catalog,
+            string memory bookMetadataURI
+        )
+    {
+        pagesCollection = address(_pagesCollection);
+        catalog = _catalog;
+        bookMetadataURI = _bookMetadataURI;
+    }
+
+    function batchMintWithParts(
+        uint256[] memory bookIds,
         address[] memory tos,
-        uint64[] memory assetIds,
+        uint64[][] memory fixedPartIds,
         IStrangePage.Page[][] memory pages
     ) public virtual onlyOwnerOrContributor {
-        uint256 length = tokenIds.length;
+        uint256 length = bookIds.length;
         if (
             length != tos.length ||
-            length != assetIds.length ||
+            length != fixedPartIds.length ||
             length != pages.length
         ) {
             revert ArraysLengthMismatch();
         }
-        _prepareMint(length);
-        for (uint256 i = 0; i < length; ) {
-            uint256 tokenId = tokenIds[i];
-            uint64 bookAssetId = assetIds[i];
-            _safeMint(tos[i], tokenId, "");
-            _addAssetToToken(tokenId, bookAssetId, 0);
-            _nestMintPagesAndEquip(tokenId, bookAssetId, pages[i]);
+        for (uint256 i; i < length; ) {
+            mintWithParts(bookIds[i], tos[i], fixedPartIds[i], pages[i]);
             unchecked {
                 ++i;
             }
         }
+    }
+
+    function mintWithParts(
+        uint256 bookId,
+        address to,
+        uint64[] memory fixedPartIds,
+        IStrangePage.Page[] memory pages
+    ) public virtual onlyOwnerOrContributor {
+        _prepareMint(1);
+        uint64 bookAssetId = _addAssetWithFixedParts(fixedPartIds);
+        _safeMint(to, bookId, "");
+        _addAssetToToken(bookId, bookAssetId, 0);
+        if (pages.length > 0) {
+            _nestMintPagesAndEquip(bookId, bookAssetId, pages);
+        }
+    }
+
+    function _addAssetWithFixedParts(
+        uint64[] memory fixedPartIds
+    ) internal returns (uint64 bookAssetId) {
+        unchecked {
+            ++_totalAssets;
+        }
+
+        uint64[] memory partIds = new uint64[](fixedPartIds.length + 10);
+        uint256 length = fixedPartIds.length;
+        for (uint256 i; i < length; ) {
+            partIds[i] = fixedPartIds[i];
+            unchecked {
+                ++i;
+            }
+        }
+
+        for (uint64 i; i < 10; ) {
+            partIds[length + i] = 1001 + i;
+            unchecked {
+                ++i;
+            }
+        }
+
+        _addAssetEntry(
+            uint64(_totalAssets),
+            1,
+            _catalog,
+            _bookMetadataURI,
+            partIds
+        );
+        bookAssetId = uint64(_totalAssets);
     }
 
     function _nestMintPagesAndEquip(
@@ -96,15 +164,28 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
         uint64 bookAssetId,
         IStrangePage.Page[] memory pages
     ) internal {
+        _pagesCollection.nestMintPages(bookId, pages);
         uint256 length = pages.length;
         for (uint256 i; i < length; ) {
             IERC6220.IntakeEquip memory equipInfo = IERC6220.IntakeEquip({
                 tokenId: bookId,
                 childIndex: i,
                 assetId: bookAssetId,
-                slotPartId: pages[i].number,
+                slotPartId: pages[i].number + 1000, // Slot part ids start at 1001
                 childAssetId: pages[i].number
             });
+            /*  If failing, overwrite RMRK/equippable/RMRKMinifiedEquippable.sol to have an external and internal function to equip like this:
+            function equip(
+                IntakeEquip memory data
+            ) public virtual onlyApprovedForAssetsOrOwner(data.tokenId) nonReentrant {
+                _equip(data);
+            }
+
+            function _equip(
+                IntakeEquip memory data
+            ) internal virtual {
+                // All code here
+            } */
             _equip(equipInfo);
             unchecked {
                 ++i;
