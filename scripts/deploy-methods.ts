@@ -12,12 +12,29 @@ import {
 } from '../typechain-types';
 import { getRegistry } from './get-registry';
 import * as C from './constants';
+import { ZeroAddress } from 'ethers';
+
+interface Page {
+  number: number;
+  id: number;
+}
+
+interface Book {
+  bookId: bigint;
+  to: string;
+  ribbon: number;
+  rune1: number;
+  rune2: number;
+  rune3: number;
+  tree: number;
+  pages: Page[];
+}
 
 export async function deployBookOfLore(): Promise<BookOfLore> {
   console.log(`Deploying BookOfLore to ${network.name} blockchain...`);
 
   const contractFactory = await ethers.getContractFactory('BookOfLore');
-  const args = [C.BOOK_METADATA_URL, 66n, C.BENEFICIARY_ADDRESS, 1500] as const;
+  const args = [C.BOOK_COLLECTION_METADATA_URI, 66n, C.BENEFICIARY_ADDRESS, 1500] as const;
   const contract: BookOfLore = await contractFactory.deploy(...args);
   await contract.waitForDeployment();
   const contractAddress = await contract.getAddress();
@@ -44,7 +61,7 @@ export async function deployStrangePage(): Promise<StrangePage> {
   console.log(`Deploying StrangePage to ${network.name} blockchain...`);
 
   const contractFactory = await ethers.getContractFactory('StrangePage');
-  const args = [C.PAGE_METADATA_URL, 850n, C.BENEFICIARY_ADDRESS, 1500] as const;
+  const args = [C.PAGE_COLLECTION_METADATA_URI, 850n, C.BENEFICIARY_ADDRESS, 1500] as const;
   const contract: StrangePage = await contractFactory.deploy(...args);
   await contract.waitForDeployment();
   const contractAddress = await contract.getAddress();
@@ -67,11 +84,114 @@ export async function deployStrangePage(): Promise<StrangePage> {
   return contract;
 }
 
-export async function addBookAssets(book: BookOfLore) {}
+export async function configure(
+  book: BookOfLore,
+  page: StrangePage,
+  catalog: RMRKCatalogImpl,
+  bookMetadataUri: string,
+) {
+  let tx = await book.setConfig(
+    await page.getAddress(),
+    await catalog.getAddress(),
+    bookMetadataUri,
+  );
+  await tx.wait();
 
-export async function addPageAssets(page: StrangePage) {}
+  tx = await page.setBookOfLore(await book.getAddress());
+  await tx.wait();
 
-export async function configureCatalog(catalog: RMRKCatalogImpl, pageAddress: string) {}
+  tx = await page.manageContributor(await book.getAddress(), true);
+  await tx.wait();
+
+  tx = await book.setAutoAcceptCollection(await page.getAddress(), true);
+  await tx.wait();
+
+  console.log('Configured Book+Page+Catalog');
+}
+
+export async function mintBook(
+  book: BookOfLore,
+  bookId: bigint,
+  to: string,
+  ribbon: bigint,
+  rune1: bigint,
+  rune2: bigint,
+  rune3: bigint,
+  tree: bigint,
+  pages: Page[],
+) {
+  const tx = await book.mintWithParts(bookId, to, [ribbon, rune1, rune2, rune3, tree], pages);
+  await tx.wait();
+}
+
+export async function batchMintBooks(book: BookOfLore, books: Book[]) {
+  const batch_size = 10;
+  for (let i = 0; i < books.length; i += batch_size) {
+    const batch = books.slice(i, i + batch_size);
+    const tx = await book.batchMintWithParts(
+      batch.map((b) => b.bookId),
+      batch.map((b) => b.to),
+      batch.map((b) => [b.ribbon, b.rune1, b.rune2, b.rune3, b.tree]),
+      batch.map((b) => b.pages),
+    );
+    await tx.wait();
+  }
+}
+
+export async function mintPages(page: StrangePage, tos: string[], pages: Page[]) {
+  const tx = await page.mintPages(tos, pages);
+  await tx.wait();
+}
+
+export async function addPageAssets(page: StrangePage, bookAddress: string) {
+  for (let i = 0; i < C.ALL_PAGES.length; i++) {
+    // We use part Id as equippable group Id for simplicity:
+    const equippableGroupIdAndPartId = C.ALL_SLOT_PARTS_IDS[i];
+    let tx = await page.addEquippableAssetEntry(
+      equippableGroupIdAndPartId,
+      ZeroAddress,
+      C.ALL_PAGES[i],
+      [],
+    );
+    await tx.wait();
+
+    tx = await page.setValidParentForEquippableGroup(
+      equippableGroupIdAndPartId,
+      bookAddress,
+      equippableGroupIdAndPartId,
+    );
+  }
+}
+
+export async function configureCatalog(catalog: RMRKCatalogImpl, pageAddress: string) {
+  let tx = await catalog.addPartList(
+    C.ALL_SLOT_PARTS.map((partUri, index) => ({
+      partId: C.ALL_SLOT_PARTS_IDS[index],
+      part: {
+        itemType: C.PART_TYPE_SLOT,
+        z: C.ALL_SLOT_PARTS_Z_INDICES[index],
+        equippable: [pageAddress],
+        metadataURI: partUri,
+      },
+    })),
+  );
+  await tx.wait();
+  console.log('Added all slot parts to catalog');
+
+  tx = await catalog.addPartList(
+    C.ALL_FIXED_PARTS.map((partUri, index) => ({
+      partId: C.ALL_FIXED_PARTS_IDS[index],
+      part: {
+        itemType: C.PART_TYPE_FIXED,
+        z: C.ALL_FIXED_PARTS_Z_INDICES[index],
+        equippable: [],
+        metadataURI: partUri,
+      },
+    })),
+  );
+  await tx.wait();
+  console.log('Added all fixed parts to catalog');
+}
 
 export async function deployBulkWriter(): Promise<RMRKBulkWriter> {
   const bulkWriterFactory = await ethers.getContractFactory('RMRKBulkWriter');
