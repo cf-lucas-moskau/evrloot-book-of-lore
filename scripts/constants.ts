@@ -1,6 +1,6 @@
 export const BENEFICIARY_ADDRESS = '0x000000000000000000000000000000000000dead'; // TODO: update
 
-const BASE_URI = 'ipfs://QmVrpxnmXzdnN8kkHYVuk8DfW8NeSRusevrW9yMPopYN2L';
+const BASE_URI = 'ipfs://QmSX1r27PZ2Q6RQpPVhnhM13KN8Tr2a84eguk8oHjQ78z7';
 export const BOOK_COLLECTION_METADATA_URI = `${BASE_URI}/book-of-lore/collection.json`;
 export const BOOK_ASSET_METADATA_URI = `${BASE_URI}/book-of-lore/book.json`;
 export const PAGE_COLLECTION_METADATA_URI = `${BASE_URI}/strange-pages/collection.json`;
@@ -103,15 +103,15 @@ export const FIXED_PART_RIBBON_GREEN_Z_INDEX = 2n;
 export const FIXED_PART_RIBBON_RED_Z_INDEX = 2n;
 export const FIXED_PART_RIBBON_PURPLE_Z_INDEX = 2n;
 export const FIXED_PART_RIBBON_SHADOW_Z_INDEX = 2n;
-export const FIXED_PART_RUNE_1A_Z_INDEX = 6n;
-export const FIXED_PART_RUNE_1B_Z_INDEX = 6n;
-export const FIXED_PART_RUNE_1C_Z_INDEX = 6n;
+export const FIXED_PART_RUNE_1B_Z_INDEX = 4n;
+export const FIXED_PART_RUNE_1A_Z_INDEX = 4n;
+export const FIXED_PART_RUNE_1C_Z_INDEX = 4n;
 export const FIXED_PART_RUNE_2A_Z_INDEX = 5n;
 export const FIXED_PART_RUNE_2B_Z_INDEX = 5n;
 export const FIXED_PART_RUNE_2C_Z_INDEX = 5n;
-export const FIXED_PART_RUNE_3A_Z_INDEX = 4n;
-export const FIXED_PART_RUNE_3B_Z_INDEX = 4n;
-export const FIXED_PART_RUNE_3C_Z_INDEX = 4n;
+export const FIXED_PART_RUNE_3A_Z_INDEX = 6n;
+export const FIXED_PART_RUNE_3B_Z_INDEX = 6n;
+export const FIXED_PART_RUNE_3C_Z_INDEX = 6n;
 export const FIXED_PART_TREE_BLUE_Z_INDEX = 3n;
 export const FIXED_PART_TREE_BRIGHT_Z_INDEX = 3n;
 export const FIXED_PART_TREE_DARK_Z_INDEX = 3n;
@@ -137,16 +137,16 @@ export const ALL_FIXED_PARTS_Z_INDICES = [
   FIXED_PART_TREE_DARK_Z_INDEX,
 ];
 
-export const SLOT_PART_PAGE_1_Z_INDEX = 16n;
-export const SLOT_PART_PAGE_2_Z_INDEX = 15n;
-export const SLOT_PART_PAGE_3_Z_INDEX = 14n;
-export const SLOT_PART_PAGE_4_Z_INDEX = 13n;
-export const SLOT_PART_PAGE_5_Z_INDEX = 12n;
-export const SLOT_PART_PAGE_6_Z_INDEX = 11n;
-export const SLOT_PART_PAGE_7_Z_INDEX = 10n;
-export const SLOT_PART_PAGE_8_Z_INDEX = 9n;
-export const SLOT_PART_PAGE_9_Z_INDEX = 8n;
-export const SLOT_PART_PAGE_10_Z_INDEX = 7n;
+export const SLOT_PART_PAGE_1_Z_INDEX = 7n;
+export const SLOT_PART_PAGE_2_Z_INDEX = 8n;
+export const SLOT_PART_PAGE_3_Z_INDEX = 9n;
+export const SLOT_PART_PAGE_4_Z_INDEX = 10n;
+export const SLOT_PART_PAGE_5_Z_INDEX = 11n;
+export const SLOT_PART_PAGE_6_Z_INDEX = 12n;
+export const SLOT_PART_PAGE_7_Z_INDEX = 13n;
+export const SLOT_PART_PAGE_8_Z_INDEX = 14n;
+export const SLOT_PART_PAGE_9_Z_INDEX = 15n;
+export const SLOT_PART_PAGE_10_Z_INDEX = 16n;
 
 export const ALL_SLOT_PARTS_Z_INDICES = [
   SLOT_PART_PAGE_1_Z_INDEX,

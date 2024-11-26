@@ -29,7 +29,7 @@ async function fixture(): Promise<{
 
   await configureCatalog(catalog, await page.getAddress());
   await addPageAssets(page, await book.getAddress());
-  await configure(book, page, catalog, C.BOOK_ASSET_METADATA_URI);
+  await configure(book, page, catalog);
 
   return { book, page, catalog, renderUtils };
 }
@@ -146,6 +146,11 @@ describe('Book of Lore', async () => {
         C.FIXED_PART_TREE_BLUE_PART_ID,
         C.FIXED_PART_TREE_BLUE_Z_INDEX,
         C.FIXED_PART_TREE_BLUE_METADATA_URI,
+      ],
+      [
+        C.FIXED_PART_BOOK_BASE_PART_ID,
+        C.FIXED_PART_BOOK_BASE_Z_INDEX,
+        C.FIXED_PART_BOOK_BASE_METADATA_URI,
       ],
     ]);
 

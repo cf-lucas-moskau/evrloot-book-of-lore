@@ -40,6 +40,7 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
     IStrangePage private _pagesCollection;
     address private _catalog;
     string private _bookMetadataURI;
+    uint64 private _bookBaseFixedPartId;
     uint256 private _contractURIFrozen; // Cheaper than a bool
 
     // Constructor
@@ -68,11 +69,13 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
     function setConfig(
         address pagesCollection,
         address catalog,
-        string memory bookMetadataURI
+        string memory bookMetadataURI,
+        uint64 bookBaseFixedPartId
     ) external onlyOwner {
         _pagesCollection = IStrangePage(pagesCollection);
         _catalog = catalog;
         _bookMetadataURI = bookMetadataURI;
+        _bookBaseFixedPartId = bookBaseFixedPartId;
     }
 
     function getConfig()
@@ -81,12 +84,14 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
         returns (
             address pagesCollection,
             address catalog,
-            string memory bookMetadataURI
+            string memory bookMetadataURI,
+            uint64 bookBaseFixedPartId
         )
     {
         pagesCollection = address(_pagesCollection);
         catalog = _catalog;
         bookMetadataURI = _bookMetadataURI;
+        bookBaseFixedPartId = _bookBaseFixedPartId;
     }
 
     function batchMintWithParts(
@@ -133,7 +138,8 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
             ++_totalAssets;
         }
 
-        uint64[] memory partIds = new uint64[](fixedPartIds.length + 10);
+        // Passed fixed parts (ribbon, tree and runes) + 10 pages + 1 book  base
+        uint64[] memory partIds = new uint64[](fixedPartIds.length + 11);
         uint256 length = fixedPartIds.length;
         for (uint256 i; i < length; ) {
             partIds[i] = fixedPartIds[i];
@@ -148,6 +154,8 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
                 ++i;
             }
         }
+
+        partIds[length + 10] = _bookBaseFixedPartId;
 
         _addAssetEntry(
             uint64(_totalAssets),

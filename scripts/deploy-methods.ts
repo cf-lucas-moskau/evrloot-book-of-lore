@@ -84,16 +84,12 @@ export async function deployStrangePage(): Promise<StrangePage> {
   return contract;
 }
 
-export async function configure(
-  book: BookOfLore,
-  page: StrangePage,
-  catalog: RMRKCatalogImpl,
-  bookMetadataUri: string,
-) {
+export async function configure(book: BookOfLore, page: StrangePage, catalog: RMRKCatalogImpl) {
   let tx = await book.setConfig(
     await page.getAddress(),
     await catalog.getAddress(),
-    bookMetadataUri,
+    C.BOOK_ASSET_METADATA_URI,
+    C.FIXED_PART_BOOK_BASE_PART_ID,
   );
   await tx.wait();
 
