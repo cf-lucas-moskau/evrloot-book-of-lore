@@ -20,7 +20,7 @@ async function main() {
   await addPageAssets(page, await book.getAddress());
   await configure(book, page, catalog);
 
-  await mintBook(
+  /* await mintBook(
     book,
     1n,
     owner.address,
@@ -41,7 +41,7 @@ async function main() {
       { number: 9, id: 62 },
       { number: 10, id: 8 },
     ],
-  );
+  ); */
 }
 
 main().catch((error) => {
