@@ -140,8 +140,6 @@ export async function mintPages(page: StrangePage, tos: string[], pages: Page[])
   for (let i = 0; i < tos.length; i += batch_size) {
     const batch_tos = tos.slice(i, i + batch_size);
     const batch_pages = pages.slice(i, i + batch_size);
-    console.log('Minting pages', batch_pages);
-    console.log('Minting toos', batch_tos);
 
     const tx = await page.mintPages(batch_tos, batch_pages);
     await tx.wait();
@@ -166,7 +164,9 @@ export async function addPageAssets(page: StrangePage, bookAddress: string) {
       bookAddress,
       equippableGroupIdAndPartId,
     );
+    await tx.wait();
   }
+  console.log('Added all page assets to page');
 }
 
 export async function configureCatalog(catalog: RMRKCatalogImpl, pageAddress: string) {

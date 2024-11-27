@@ -179,13 +179,13 @@ function getNewlyBurned(minted: MintedData): { books: MintedBook[]; pages: Minte
 
       // Skip if page Id in minted data
       if (minted.pages[ksmId]) {
-        console.log(`Skipping already minted page: ${ksmId}`);
+        // console.log(`Skipping already minted page: ${ksmId}`);
         continue;
       }
 
       // Skip if page is nested in a book
       if (nestMintedPages.includes(ksmId)) {
-        console.log(`Skipping page nested in book: ${ksmId}`);
+        // console.log(`Skipping page nested in book: ${ksmId}`);
         continue;
       }
 
