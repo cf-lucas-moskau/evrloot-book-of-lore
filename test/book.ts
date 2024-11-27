@@ -11,6 +11,7 @@ import {
   deployRenderUtils,
   deployStrangePage,
   mintBook,
+  mintPages,
 } from '../scripts/deploy-methods';
 import * as C from '../scripts/constants';
 import { SignerWithAddress } from '@nomicfoundation/hardhat-ethers/signers';
@@ -184,5 +185,42 @@ describe('Book of Lore', async () => {
       C.PAGE_3_METADATA_URI, // childAssetMetadata
       C.SLOT_PART_PAGE_3_METADATA_URI, // partMetadata
     ]);
+  });
+
+  it('can mint pages', async function () {
+    const pages = [
+      {
+        number: 1,
+        id: 1,
+      },
+      {
+        number: 3,
+        id: 1,
+      },
+      {
+        number: 5,
+        id: 1,
+      },
+    ];
+    const tos = [owner.address, owner.address, owner.address];
+
+    await mintPages(page, tos, pages);
+    expect(await page.balanceOf(owner.address)).to.equal(3);
+  });
+
+  it('cannot mint the same page by number and id twice', async function () {
+    await mintPages(page, [owner.address], [{ number: 1, id: 1 }]);
+
+    await expect(
+      mintPages(page, [owner.address], [{ number: 1, id: 1 }]),
+    ).to.be.revertedWithCustomError(page, 'PageAlreadyMinted');
+  });
+
+  it('cannot mint the same book by id twice', async function () {
+    await mintBook(book, 1n, owner.address, 1n, 1n, 1n, 1n, 1n, []);
+
+    await expect(
+      mintBook(book, 1n, owner.address, 2n, 2n, 2n, 2n, 2n, []),
+    ).to.be.revertedWithCustomError(page, 'ERC721TokenAlreadyMinted');
   });
 });

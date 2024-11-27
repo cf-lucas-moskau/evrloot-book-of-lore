@@ -111,7 +111,7 @@ contract StrangePage is RMRKAbstractEquippable, IStrangePage {
 
         for (uint256 tokenId = firstId; tokenId < offset; ) {
             Page memory page = pages[tokenId - firstId];
-            _safeMint(_bookOfLore, tokenId, "");
+            _safeMint(tos[tokenId - firstId], tokenId, "");
             _checkPageNotMintedAndStore(tokenId, page);
             _addAssetToToken(tokenId, page.number, 0);
 
