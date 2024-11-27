@@ -131,12 +131,22 @@ export async function batchMintBooks(book: BookOfLore, books: Book[]) {
       batch.map((b) => b.pages),
     );
     await tx.wait();
+    console.log(`Minted batch of books ${i + 1} to ${i + batch.length} of ${books.length}`);
   }
 }
 
 export async function mintPages(page: StrangePage, tos: string[], pages: Page[]) {
-  const tx = await page.mintPages(tos, pages);
-  await tx.wait();
+  const batch_size = 30;
+  for (let i = 0; i < tos.length; i += batch_size) {
+    const batch_tos = tos.slice(i, i + batch_size);
+    const batch_pages = pages.slice(i, i + batch_size);
+    console.log('Minting pages', batch_pages);
+    console.log('Minting toos', batch_tos);
+
+    const tx = await page.mintPages(batch_tos, batch_pages);
+    await tx.wait();
+    console.log(`Minted batch of pages ${i + 1} to ${i + batch_size} of ${tos.length}`);
+  }
 }
 
 export async function addPageAssets(page: StrangePage, bookAddress: string) {
