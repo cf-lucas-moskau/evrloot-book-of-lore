@@ -1,0 +1,18 @@
+query MyQuery {
+  nfts(
+    where: {collectionId: {_eq: "54bbe132daf82f486f-EVERLORE"}}
+    order_by: {id: asc}
+  ) {
+    id
+    burned
+    metadata_name
+    metadata_image
+    rootowner
+    children {
+      id
+      metadata_name
+      collectionId
+      burned
+    }
+  }
+}
