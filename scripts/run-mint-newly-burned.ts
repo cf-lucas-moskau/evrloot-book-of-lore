@@ -5,6 +5,15 @@ import minted_prod from '../migration/minted_prod.json';
 import { network } from 'hardhat';
 import { randomInt } from 'crypto';
 import { batchMintBooks, mintPages } from './deploy-methods';
+import * as C from './constants';
+
+const BOOKS_WITH_PURPLE_RIBBON = [9, 13, 19, 30, 42, 47, 50, 65];
+const BOOKS_WITH_RED_RIBBON = [1, 2, 5, 7, 8, 18, 20, 22, 29, 31, 36, 43, 54, 58, 60, 63, 64];
+const BOOKS_WITH_BLUE_RIBBON = [
+  3, 6, 10, 12, 14, 15, 16, 26, 27, 28, 32, 34, 38, 39, 40, 44, 45, 48, 49, 51, 52, 53, 55, 56, 61,
+  62,
+];
+const BOOKS_WITH_GREEN_RIBBON = [4, 11, 17, 21, 23, 24, 25, 33, 35, 37, 41, 46, 57, 59, 66];
 
 interface MintedData {
   books: Record<string, MintedBook>;
@@ -53,6 +62,8 @@ async function main() {
   }
 
   const { books: booksToMint, pages: pagesToMint } = getNewlyBurned(mintedUpdated);
+
+  console.log('Minting newly burned books and pages');
 
   await batchMintBooks(
     book,
@@ -112,6 +123,7 @@ function getNewlyBurned(minted: MintedData): { books: MintedBook[]; pages: Minte
     const ksmId = data.id;
     const burnMemo = data.burned;
     const name = data.metadata_name;
+    let nestMintedPages: string[] = [];
 
     if (!isValidBurnMemo(burnMemo)) {
       continue;
@@ -128,14 +140,10 @@ function getNewlyBurned(minted: MintedData): { books: MintedBook[]; pages: Minte
       }
 
       const minted_on = new Date().toISOString();
-      const ribbon = 0; // TODO Get from mapping
-      // Pick random runes from 1 to 3:
-      const rune1 = randomInt(1, 4);
-      const rune2 = randomInt(1, 4);
-      const rune3 = randomInt(1, 4);
-      const tree = randomInt(1, 4);
-      const bookPages: NestedPage[] = [];
+      const ribbon = getRibbon(bookId);
+      const [rune1, rune2, rune3, tree] = getRunesAndTree();
 
+      const bookPages: NestedPage[] = [];
       for (const child of data.children) {
         const pageKsmId = child.id;
         if (
@@ -146,8 +154,9 @@ function getNewlyBurned(minted: MintedData): { books: MintedBook[]; pages: Minte
           continue;
         }
         const pageId = parseInt(pageKsmId.slice(-2));
-        const pageNumber = parseInt(pageKsmId.slice(14));
+        const pageNumber = parseInt(child.metadata_name.slice(14));
         bookPages.push({ ksmId: pageKsmId, id: pageId, number: pageNumber });
+        nestMintedPages.push(pageKsmId);
       }
 
       books.push({
@@ -174,8 +183,14 @@ function getNewlyBurned(minted: MintedData): { books: MintedBook[]; pages: Minte
         continue;
       }
 
+      // Skip if page is nested in a book
+      if (nestMintedPages.includes(ksmId)) {
+        console.log(`Skipping page nested in book: ${ksmId}`);
+        continue;
+      }
+
       const pageId = parseInt(ksmId.slice(-2));
-      const pageNumber = parseInt(ksmId.slice(14));
+      const pageNumber = parseInt(data.metadata_name.slice(14));
       pages.push({
         ksmId,
         to: burnMemo,
@@ -188,6 +203,41 @@ function getNewlyBurned(minted: MintedData): { books: MintedBook[]; pages: Minte
   }
 
   return { books, pages };
+}
+
+function getRibbon(bookId: number): number {
+  if (BOOKS_WITH_PURPLE_RIBBON.includes(bookId)) {
+    return Number(C.FIXED_PART_RIBBON_PURPLE_PART_ID);
+  } else if (BOOKS_WITH_RED_RIBBON.includes(bookId)) {
+    return Number(C.FIXED_PART_RIBBON_RED_PART_ID);
+  } else if (BOOKS_WITH_BLUE_RIBBON.includes(bookId)) {
+    return Number(C.FIXED_PART_RIBBON_BLUE_PART_ID);
+  } else if (BOOKS_WITH_GREEN_RIBBON.includes(bookId)) {
+    return Number(C.FIXED_PART_RIBBON_GREEN_PART_ID);
+  } else {
+    throw new Error(`Ribbon not found for book id: ${bookId}`);
+  }
+}
+
+function getRunesAndTree(): [number, number, number, number] {
+  const rune1 = randomInt(
+    Number(C.FIXED_PART_RUNE_1A_PART_ID),
+    Number(C.FIXED_PART_RUNE_1C_PART_ID) + 3,
+  );
+  const rune2 = randomInt(
+    Number(C.FIXED_PART_RUNE_2A_PART_ID),
+    Number(C.FIXED_PART_RUNE_2C_PART_ID) + 3,
+  );
+  const rune3 = randomInt(
+    Number(C.FIXED_PART_RUNE_3A_PART_ID),
+    Number(C.FIXED_PART_RUNE_3C_PART_ID) + 3,
+  );
+  const tree = randomInt(
+    Number(C.FIXED_PART_TREE_BLUE_PART_ID),
+    Number(C.FIXED_PART_TREE_DARK_PART_ID) + 3,
+  );
+
+  return [rune1, rune2, rune3, tree];
 }
 
 function isValidBurnMemo(burnMemo: string): boolean {
