@@ -62,7 +62,10 @@ async function main() {
   }
 
   const { books: booksToMint, pages: pagesToMint } = getNewlyBurned(mintedUpdated);
-
+  if (booksToMint.length === 0 && pagesToMint.length === 0) {
+    console.log('No newly burned books or pages');
+    return;
+  }
   console.log('Minting newly burned books and pages');
 
   await batchMintBooks(
