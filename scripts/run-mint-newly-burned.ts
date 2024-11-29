@@ -62,6 +62,7 @@ async function main() {
   }
 
   const { books: booksToMint, pages: pagesToMint } = getNewlyBurned(mintedUpdated);
+
   if (booksToMint.length === 0 && pagesToMint.length === 0) {
     console.log('No newly burned books or pages');
     return;
@@ -225,19 +226,19 @@ function getRibbon(bookId: number): number {
 function getRunesAndTree(): [number, number, number, number] {
   const rune1 = randomInt(
     Number(C.FIXED_PART_RUNE_1A_PART_ID),
-    Number(C.FIXED_PART_RUNE_1C_PART_ID) + 3,
+    Number(C.FIXED_PART_RUNE_1C_PART_ID) + 1,
   );
   const rune2 = randomInt(
     Number(C.FIXED_PART_RUNE_2A_PART_ID),
-    Number(C.FIXED_PART_RUNE_2C_PART_ID) + 3,
+    Number(C.FIXED_PART_RUNE_2C_PART_ID) + 1,
   );
   const rune3 = randomInt(
     Number(C.FIXED_PART_RUNE_3A_PART_ID),
-    Number(C.FIXED_PART_RUNE_3C_PART_ID) + 3,
+    Number(C.FIXED_PART_RUNE_3C_PART_ID) + 1,
   );
   const tree = randomInt(
     Number(C.FIXED_PART_TREE_BLUE_PART_ID),
-    Number(C.FIXED_PART_TREE_DARK_PART_ID) + 3,
+    Number(C.FIXED_PART_TREE_DARK_PART_ID) + 1,
   );
 
   return [rune1, rune2, rune3, tree];
