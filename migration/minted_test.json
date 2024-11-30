@@ -62,6 +62,132 @@
           "number": 10
         }
       ]
+    },
+    "11840258-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000010": {
+      "ksmId": "11840258-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000010",
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z",
+      "ribbon": 6,
+      "rune1": 12,
+      "rune2": 14,
+      "rune3": 19,
+      "tree": 20,
+      "pages": [
+        {
+          "ksmId": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000050",
+          "id": 50,
+          "number": 1
+        },
+        {
+          "ksmId": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000031",
+          "id": 31,
+          "number": 9
+        },
+        {
+          "ksmId": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000014",
+          "id": 14,
+          "number": 4
+        },
+        {
+          "ksmId": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000036",
+          "id": 36,
+          "number": 5
+        },
+        {
+          "ksmId": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000061",
+          "id": 61,
+          "number": 6
+        },
+        {
+          "ksmId": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000063",
+          "id": 63,
+          "number": 3
+        },
+        {
+          "ksmId": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000066",
+          "id": 66,
+          "number": 2
+        },
+        {
+          "ksmId": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000064",
+          "id": 64,
+          "number": 10
+        },
+        {
+          "ksmId": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000047",
+          "id": 47,
+          "number": 7
+        },
+        {
+          "ksmId": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000075",
+          "id": 75,
+          "number": 8
+        }
+      ]
+    },
+    "11840258-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000030": {
+      "ksmId": "11840258-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000030",
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z",
+      "ribbon": 9,
+      "rune1": 12,
+      "rune2": 16,
+      "rune3": 17,
+      "tree": 20,
+      "pages": [
+        {
+          "ksmId": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000036",
+          "id": 36,
+          "number": 4
+        },
+        {
+          "ksmId": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000073",
+          "id": 73,
+          "number": 8
+        },
+        {
+          "ksmId": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000059",
+          "id": 59,
+          "number": 2
+        },
+        {
+          "ksmId": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000035",
+          "id": 35,
+          "number": 1
+        },
+        {
+          "ksmId": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000054",
+          "id": 54,
+          "number": 9
+        },
+        {
+          "ksmId": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000012",
+          "id": 12,
+          "number": 5
+        },
+        {
+          "ksmId": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000077",
+          "id": 77,
+          "number": 10
+        },
+        {
+          "ksmId": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000004",
+          "id": 4,
+          "number": 3
+        },
+        {
+          "ksmId": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000038",
+          "id": 38,
+          "number": 7
+        },
+        {
+          "ksmId": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000047",
+          "id": 47,
+          "number": 6
+        }
+      ]
     }
   },
   "pages": {
@@ -152,6 +278,166 @@
       "bookId": 36,
       "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
       "minted_on": "2024-11-29T19:13:34.577Z"
+    },
+    "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000050": {
+      "ksmId": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000050",
+      "pageId": 50,
+      "pageNumber": 1,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000031": {
+      "ksmId": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000031",
+      "pageId": 31,
+      "pageNumber": 9,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000014": {
+      "ksmId": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000014",
+      "pageId": 14,
+      "pageNumber": 4,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000036": {
+      "ksmId": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000036",
+      "pageId": 36,
+      "pageNumber": 5,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000061": {
+      "ksmId": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000061",
+      "pageId": 61,
+      "pageNumber": 6,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000063": {
+      "ksmId": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000063",
+      "pageId": 63,
+      "pageNumber": 3,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000066": {
+      "ksmId": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000066",
+      "pageId": 66,
+      "pageNumber": 2,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000064": {
+      "ksmId": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000064",
+      "pageId": 64,
+      "pageNumber": 10,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000047": {
+      "ksmId": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000047",
+      "pageId": 47,
+      "pageNumber": 7,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000075": {
+      "ksmId": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000075",
+      "pageId": 75,
+      "pageNumber": 8,
+      "bookId": 10,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000036": {
+      "ksmId": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000036",
+      "pageId": 36,
+      "pageNumber": 4,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000073": {
+      "ksmId": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000073",
+      "pageId": 73,
+      "pageNumber": 8,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000059": {
+      "ksmId": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000059",
+      "pageId": 59,
+      "pageNumber": 2,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000035": {
+      "ksmId": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000035",
+      "pageId": 35,
+      "pageNumber": 1,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000054": {
+      "ksmId": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000054",
+      "pageId": 54,
+      "pageNumber": 9,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000012": {
+      "ksmId": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000012",
+      "pageId": 12,
+      "pageNumber": 5,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000077": {
+      "ksmId": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000077",
+      "pageId": 77,
+      "pageNumber": 10,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000004": {
+      "ksmId": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000004",
+      "pageId": 4,
+      "pageNumber": 3,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000038": {
+      "ksmId": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000038",
+      "pageId": 38,
+      "pageNumber": 7,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
+    },
+    "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000047": {
+      "ksmId": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000047",
+      "pageId": 47,
+      "pageNumber": 6,
+      "bookId": 30,
+      "to": "0x47bff18e462912ab61a465b2bc229e3857491aa6",
+      "minted_on": "2024-11-30T14:19:25.842Z"
     }
   }
 }
