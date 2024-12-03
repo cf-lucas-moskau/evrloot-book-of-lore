@@ -1,6 +1,6 @@
 export const BENEFICIARY_ADDRESS = '0x000000000000000000000000000000000000dead'; // TODO: update
 
-const BASE_URI = 'ipfs://QmSX1r27PZ2Q6RQpPVhnhM13KN8Tr2a84eguk8oHjQ78z7';
+const BASE_URI = 'ipfs://Qmd9WQpziLJpka1uw9EiQm4qR1GXcBJvgDTkAVth3YU3x9';
 export const BOOK_COLLECTION_METADATA_URI = `${BASE_URI}/book-of-lore/collection.json`;
 export const BOOK_ASSET_METADATA_URI = `${BASE_URI}/book-of-lore/book.json`;
 export const PAGE_COLLECTION_METADATA_URI = `${BASE_URI}/strange-pages/collection.json`;

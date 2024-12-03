@@ -121,7 +121,7 @@ export async function mintBook(
 }
 
 export async function batchMintBooks(book: BookOfLore, books: Book[]) {
-  const batch_size = 10;
+  const batch_size = 5;
   for (let i = 0; i < books.length; i += batch_size) {
     const batch = books.slice(i, i + batch_size);
     const tx = await book.batchMintWithParts(
