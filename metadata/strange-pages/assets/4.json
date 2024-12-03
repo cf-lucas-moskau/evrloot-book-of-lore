@@ -1,9 +1,9 @@
 {
   "name": "Strange Page #4",
   "description": "A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ",
-  "mediaUri": "ipfs://QmNTMGiT1v5QmvKwf5HZKyZjAumnUbVQYysevrq6LHmQzq/pages/equipped/4.png",
-  "image": "ipfs://QmNTMGiT1v5QmvKwf5HZKyZjAumnUbVQYysevrq6LHmQzq/pages/full/4.png",
-  "thumbnailUri": "ipfs://QmNTMGiT1v5QmvKwf5HZKyZjAumnUbVQYysevrq6LHmQzq/pages/full/4.png",
+  "mediaUri": "ipfs://QmWSbH9keqLrkoVec6zzC3fEQYhAfBuT2QAeKLECngiQuR/pages/equipped/4.png",
+  "image": "ipfs://QmWSbH9keqLrkoVec6zzC3fEQYhAfBuT2QAeKLECngiQuR/pages/full/4.png",
+  "thumbnailUri": "ipfs://QmWSbH9keqLrkoVec6zzC3fEQYhAfBuT2QAeKLECngiQuR/pages/full/4.png",
   "preferThumb": true,
   "attributes": [
     {
