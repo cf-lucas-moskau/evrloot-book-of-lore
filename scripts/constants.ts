@@ -7,7 +7,7 @@ export const PAGE_COLLECTION_METADATA_URI = `${BASE_URI}/strange-pages/collectio
 
 // For child NFTS
 export const PAGE_1_METADATA_URI = `${BASE_URI}/strange-pages/assets/1.json`;
-export const PAGE_2_METADATA_URI = `${BASE_URI}/strange-pages/assets/2.json`;
+export const PAGE_2_METADATA_URI = `ipfs://QmdPhbqf293YRWSrYr8n5NMeu14rtk9q5fRiox6wMjvZgV`;
 export const PAGE_3_METADATA_URI = `${BASE_URI}/strange-pages/assets/3.json`;
 export const PAGE_4_METADATA_URI = `${BASE_URI}/strange-pages/assets/4.json`;
 export const PAGE_5_METADATA_URI = `${BASE_URI}/strange-pages/assets/5.json`;

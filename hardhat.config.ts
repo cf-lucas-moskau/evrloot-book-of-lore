@@ -6,9 +6,11 @@ import 'hardhat-contract-sizer';
 import './tasks/emotes';
 import './tasks/attributes';
 import './tasks/metadata';
+import { ethers } from 'ethers';
 
 dotenv.config();
-const accounts = process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [];
+const accounts = process.env.MOONBEAM_PRIVATE_KEY !== undefined ? [process.env.MOONBEAM_PRIVATE_KEY] : [];
+const moonbaseAccounts = process.env.MOONBASE_PRIVATE_KEY !== undefined ? [process.env.MOONBASE_PRIVATE_KEY] : [];
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -25,7 +27,7 @@ const config: HardhatUserConfig = {
     moonbaseAlpha: {
       url: process.env.MOONBASE_URL || 'https://rpc.testnet.moonbeam.network',
       chainId: 1287,
-      accounts: accounts,
+      accounts: moonbaseAccounts,
       gasPrice: 1100000000,
     },
     sepolia: {
@@ -62,10 +64,12 @@ const config: HardhatUserConfig = {
       accounts: accounts,
     },
     moonbeam: {
-      url: process.env.MOONBEAM_URL || 'https://rpc.api.moonbeam.network',
+      url: process.env.MOONBEAM_URL || 'https://moonbeam.public.blastapi.io',
       chainId: 1284,
       accounts: accounts,
+      //gasPrice: Number(ethers.parseUnits('200000000000', 'wei')),
     },
+   
     mainnet: {
       url: process.env.ETHEREUM_URL || 'https://eth.drpc.org',
       chainId: 1,

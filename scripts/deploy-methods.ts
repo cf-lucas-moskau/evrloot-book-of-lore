@@ -41,8 +41,8 @@ export async function deployBookOfLore(): Promise<BookOfLore> {
   console.log(`BookOfLore deployed to ${contractAddress}`);
 
   if (!isHardhatNetwork()) {
-    console.log('Waiting 10 seconds before verifying contract...');
-    await delay(10000);
+    console.log('Waiting 30 seconds before verifying contract...');
+    await delay(30000);
     await run('verify:verify', {
       address: contractAddress,
       constructorArguments: args,
@@ -68,8 +68,8 @@ export async function deployStrangePage(): Promise<StrangePage> {
   console.log(`StrangePage deployed to ${contractAddress}`);
 
   if (!isHardhatNetwork()) {
-    console.log('Waiting 10 seconds before verifying contract...');
-    await delay(10000);
+    console.log('Waiting 30 seconds before verifying contract...');
+    await delay(30000);
     await run('verify:verify', {
       address: contractAddress,
       constructorArguments: args,

@@ -1,6 +1,6 @@
 filename,name,description,mediaUri,thumbnailUri,animationUri,attributes
 1,Strange Page #1,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/1.png,pages/full/1.png,,Page:integer:1
-2,Strange Page #2,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/2.png,pages/full/2.png, ,Page:integer:2
+2,Strange Page #2,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/2.png,pages/full/2.png,,Page:integer:2
 3,Strange Page #3,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/3.png,pages/full/3.png,,Page:integer:3
 4,Strange Page #4,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/4.png,pages/full/4.png,,Page:integer:4
 5,Strange Page #5,A page filled with mysterious runes. How does one decrypt it and reveal the secret information about the world of Trakan? ,pages/equipped/5.png,pages/full/5.png,,Page:integer:5

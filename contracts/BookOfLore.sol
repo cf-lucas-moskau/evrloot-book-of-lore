@@ -46,7 +46,7 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
     // Constructor
     constructor(
         string memory collectionMetadata,
-        uint256 maxSupply,
+        uint256 maxSupply_,
         address royaltyRecipient,
         uint16 royaltyPercentageBps
     )
@@ -54,7 +54,7 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
             "Book of Lore",
             "EVRBOL",
             collectionMetadata,
-            maxSupply,
+            maxSupply_,
             royaltyRecipient,
             royaltyPercentageBps
         )
@@ -182,18 +182,7 @@ contract BookOfLore is RMRKAbstractEquippable, RMRKTokenHolder {
                 slotPartId: pages[i].number + 1000, // Slot part ids start at 1001
                 childAssetId: pages[i].number
             });
-            /*  If failing, overwrite RMRK/equippable/RMRKMinifiedEquippable.sol to have an external and internal function to equip like this:
-            function equip(
-                IntakeEquip memory data
-            ) public virtual onlyApprovedForAssetsOrOwner(data.tokenId) nonReentrant {
-                _equip(data);
-            }
 
-            function _equip(
-                IntakeEquip memory data
-            ) internal virtual {
-                // All code here
-            } */
             _equip(equipInfo);
             unchecked {
                 ++i;
