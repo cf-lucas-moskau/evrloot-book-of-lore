@@ -67,6 +67,8 @@ async function main() {
     console.log('No newly burned books or pages');
     return;
   }
+  console.log(booksToMint, pagesToMint);
+  //return
   console.log('Minting newly burned books and pages');
 
   await batchMintBooks(

@@ -259,7 +259,7 @@
       },
       {
         "id": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000033",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #1",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -387,7 +387,7 @@
       },
       {
         "id": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000049",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #1",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -1195,72 +1195,11 @@
       },
       {
         "id": "11840258-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000009",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Book of Lore",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
-        "children": [
-          {
-            "id": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000033",
-            "metadata_name": "Strange Page #1",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000023",
-            "metadata_name": "Strange Page #5",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000041",
-            "metadata_name": "Strange Page #8",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000014",
-            "metadata_name": "Strange Page #3",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000004",
-            "metadata_name": "Strange Page #7",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000030",
-            "metadata_name": "Strange Page #10",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000032",
-            "metadata_name": "Strange Page #2",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000041",
-            "metadata_name": "Strange Page #4",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000021",
-            "metadata_name": "Strange Page #6",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000037",
-            "metadata_name": "Strange Page #9",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          }
-        ]
+        "children": []
       },
       {
         "id": "11840258-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000010",
@@ -2383,7 +2322,7 @@
       },
       {
         "id": "11840258-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000027",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Book of Lore",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -2392,61 +2331,61 @@
             "id": "11822864-54bbe132daf82f486f-EVERLORE-EVRLORE01-00000049",
             "metadata_name": "Strange Page #1",
             "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
+            "burned": "true"
           },
           {
             "id": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000019",
             "metadata_name": "Strange Page #3",
             "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
+            "burned": "true"
           },
           {
             "id": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000045",
             "metadata_name": "Strange Page #2",
             "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000077",
-            "metadata_name": "Strange Page #9",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000024",
-            "metadata_name": "Strange Page #7",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
+            "burned": "true"
           },
           {
             "id": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000032",
             "metadata_name": "Strange Page #10",
             "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000025",
-            "metadata_name": "Strange Page #6",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
-          },
-          {
-            "id": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000009",
-            "metadata_name": "Strange Page #8",
-            "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
+            "burned": "true"
           },
           {
             "id": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000048",
             "metadata_name": "Strange Page #4",
             "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
+            "burned": "true"
+          },
+          {
+            "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000024",
+            "metadata_name": "Strange Page #7",
+            "collectionId": "54bbe132daf82f486f-EVERLORE",
+            "burned": "true"
+          },
+          {
+            "id": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000009",
+            "metadata_name": "Strange Page #8",
+            "collectionId": "54bbe132daf82f486f-EVERLORE",
+            "burned": "true"
           },
           {
             "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000073",
             "metadata_name": "Strange Page #5",
             "collectionId": "54bbe132daf82f486f-EVERLORE",
-            "burned": ""
+            "burned": "true"
+          },
+          {
+            "id": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000025",
+            "metadata_name": "Strange Page #6",
+            "collectionId": "54bbe132daf82f486f-EVERLORE",
+            "burned": "true"
+          },
+          {
+            "id": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000077",
+            "metadata_name": "Strange Page #9",
+            "collectionId": "54bbe132daf82f486f-EVERLORE",
+            "burned": "true"
           }
         ]
       },
@@ -2907,7 +2846,7 @@
       },
       {
         "id": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000032",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #2",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -3011,7 +2950,7 @@
       },
       {
         "id": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000045",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #2",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -3187,7 +3126,7 @@
       },
       {
         "id": "11868415-54bbe132daf82f486f-EVERLORE-EVRLORE02-00000067",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #2",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -3371,7 +3310,7 @@
       },
       {
         "id": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000014",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #3",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -3411,7 +3350,7 @@
       },
       {
         "id": "11883022-54bbe132daf82f486f-EVERLORE-EVRLORE03-00000019",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #3",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -4099,7 +4038,7 @@
       },
       {
         "id": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000041",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #4",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -4155,7 +4094,7 @@
       },
       {
         "id": "11883051-54bbe132daf82f486f-EVERLORE-EVRLORE04-00000048",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #4",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -4675,7 +4614,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000005",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -4819,7 +4758,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000023",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -4827,7 +4766,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000024",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -4843,7 +4782,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000026",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -4875,7 +4814,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000030",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -4899,7 +4838,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000033",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -4979,7 +4918,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000043",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -5027,7 +4966,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000049",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -5091,7 +5030,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000057",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -5195,7 +5134,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000070",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -5211,7 +5150,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000072",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -5219,7 +5158,7 @@
       },
       {
         "id": "11910998-54bbe132daf82f486f-EVERLORE-EVRLORE05-00000073",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #5",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -5403,7 +5342,7 @@
       },
       {
         "id": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000021",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #6",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -5435,7 +5374,7 @@
       },
       {
         "id": "11924618-54bbe132daf82f486f-EVERLORE-EVRLORE06-00000025",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #6",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -6067,7 +6006,7 @@
       },
       {
         "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000004",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #7",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -6155,7 +6094,7 @@
       },
       {
         "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000015",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #7",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -6227,7 +6166,7 @@
       },
       {
         "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000024",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #7",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -6379,7 +6318,7 @@
       },
       {
         "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000043",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #7",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -6451,7 +6390,7 @@
       },
       {
         "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000052",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #7",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -6547,7 +6486,7 @@
       },
       {
         "id": "11939679-54bbe132daf82f486f-EVERLORE-EVRLORE07-00000064",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #7",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -7338,7 +7277,7 @@
       },
       {
         "id": "11966786-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000045",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Book of Lore",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -7914,7 +7853,7 @@
       },
       {
         "id": "11966786-54bbe132daf82f486f-EVERLORE-LOREBOOK-00000056",
-        "burned": "",
+        "burned": "0xf7c7b61cf3a0c9c403bc3d1e589051402d2cb267",
         "metadata_name": "Book of Lore",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -8367,7 +8306,7 @@
       },
       {
         "id": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000009",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #8",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -8623,7 +8562,7 @@
       },
       {
         "id": "11966895-54bbe132daf82f486f-EVERLORE-EVRLORE08-00000041",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #8",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -9383,7 +9322,7 @@
       },
       {
         "id": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000037",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #9",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -9703,7 +9642,7 @@
       },
       {
         "id": "12009897-54bbe132daf82f486f-EVERLORE-EVRLORE09-00000077",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #9",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
@@ -9967,7 +9906,7 @@
       },
       {
         "id": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000030",
-        "burned": "",
+        "burned": "0x91ddbcc1839f8b167988fc49a15431b5931e3d47",
         "metadata_name": "Strange Page #10",
         "metadata_image": "",
         "rootowner": "HydwuGTL6vbThMEyZq5ygYqMeHvmSpTLRsZdLx313rcPv6M",
@@ -9983,7 +9922,7 @@
       },
       {
         "id": "12026007-54bbe132daf82f486f-EVERLORE-EVRLORE10-00000032",
-        "burned": "",
+        "burned": "true",
         "metadata_name": "Strange Page #10",
         "metadata_image": "",
         "rootowner": "HLbMH5N3epJGKEf84DoHzS6XYSED5MXrbvkCSyPf6WNEmve",
